@@ -2,7 +2,6 @@
 #Name: Jonathon Meney
 #Date: Feb. 12/21
 
-import time
 import os
 
 #1. (Var) Setup the empty board as a list
