@@ -82,8 +82,9 @@ def chooseStart():
 def playerMove(board, player):
 	global player1
 	global player2
-	playersmove = int(input(player + ' what is your move?\n> '))
+	
 	try:
+		playersmove = int(input(player + ' what is your move?\n> '))
 		if board[playersmove] == ' ':
 			if player == player1:
 				board[playersmove] = player1
@@ -158,7 +159,7 @@ def mainMenu():
 			print ('             -Quit-             ')
 			print ('--------------------------------')
 			print ()
-			print ('Copyright © 2019 by Jonathon Meney')
+			print ('Copyright © 2021 by Jonathon Meney')
 			print ()
 		
 		def showInstructions():
@@ -182,10 +183,10 @@ def mainMenu():
 				os.system('clear')
 				mainMenu()
 			
-			elif choice == 'quit':
-				os.system('clear')
-				print ('Leaving so soon? Are you sure you don\'t want to play my epic game?')
-				quitchoice = input('Yes or No?\n> ')
+		elif choice == 'quit':
+			os.system('clear')
+			print ('Leaving so soon? Are you sure you don\'t want to play my epic game?')
+			quitchoice = input('Yes or No?\n> ')
 			
 			if quitchoice == 'yes':
 				print ('Thanks for playing.')
@@ -318,5 +319,19 @@ def main():
 				runGame = False
 				print('The Board is full!\nGame Over!')
 				break
+	
+	while runGame == False:
+		if runGame == False:
+			rerun = input('Would you like to play again?\n(Yes or no)\n> ')
+			if rerun.lower() == 'yes':
+				os.system('clear')
+				main()
+			
+			elif rerun.lower() == 'no':
+				break
+				
+			else:
+				os.system('clear')
+				print('Invalid')
 
 main()
