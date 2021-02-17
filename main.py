@@ -3,7 +3,7 @@
 #Date: Feb. 12/21
 
 import os
-
+import sys
 #1. (Var) Setup the empty board as a list
 theBoard = ['null',
             ' ',' ',' ',
@@ -146,7 +146,6 @@ def checkFull(board):
     else:
       return False
 
-
 def mainMenu():
 		global runGame
 		def titlescreen():
@@ -190,6 +189,7 @@ def mainMenu():
 			
 			if quitchoice == 'yes':
 				print ('Thanks for playing.')
+				sys.exit()
 			
 			elif quitchoice == 'no':
 				os.system('clear')
